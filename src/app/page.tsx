@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import MenuCards from "./components/MenuCards";
+import React from "react";
+import { ThemeChanger } from "./components/ThemeChanger";
 
 interface CoffeeDataType {
   id: number;
@@ -24,16 +26,21 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center">
-      {data.map((coffee) => (
-        <MenuCards
-          key={coffee.id}
-          title={coffee.title}
-          description={coffee.description}
-          ingredients={coffee.ingredients}
-          image={coffee.image}
-        />
-      ))}
-    </div>
+    <>
+      <div className="flex flex-col bg-white dark:bg-gray-500">
+        <ThemeChanger />
+        <div className="flex flex-row flex-wrap justify-center">
+          {data.map((coffee) => (
+            <MenuCards
+              key={coffee.id}
+              title={coffee.title}
+              description={coffee.description}
+              ingredients={coffee.ingredients}
+              image={coffee.image}
+            />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
