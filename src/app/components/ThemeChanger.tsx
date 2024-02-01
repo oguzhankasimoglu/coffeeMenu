@@ -4,17 +4,22 @@ export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="text-black dark:text-white">
-      The current theme is: {theme}
-      {/* <button onClick={() => setTheme("light")}>Light Mode</button>
+    <div className="flex flex-1">
+      <div className="text-black dark:text-white border rounded-3xl">
+        {theme}
+        {/* <button onClick={() => setTheme("light")}>Light Mode</button>
       <button onClick={() => setTheme("dark")}>Dark Mode</button> */}
-      <button
-        onClick={() =>
-          theme === "dark" ? setTheme("light") : setTheme("dark")
-        }
-      >
-        Toggle Theme
-      </button>
+      </div>
+      <div className="">
+        <button
+          className="text-black dark:text-white border rounded-3xl"
+          onClick={() =>
+            theme === "dark" ? setTheme("light") : setTheme("dark")
+          }
+        >
+          Toggle Theme
+        </button>
+      </div>
     </div>
   );
 };

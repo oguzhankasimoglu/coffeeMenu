@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flex flex-col bg-white dark:bg-gray-500">
+      <div className="flex flex-col bg-white dark:bg-black">
         <ThemeChanger />
         <div className="flex flex-row flex-wrap justify-center">
           {data.map((coffee) => (
