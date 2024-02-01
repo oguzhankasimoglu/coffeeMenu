@@ -19,7 +19,9 @@ const MenuCards = (props: MenuCardsProps) => {
         alt={props.title}
       />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{props.title}</div>
+        <div className="font-bold text-xl mb-2 text-white dark:text-red-500">
+          {props.title}
+        </div>
         <p className="text-white text-base">{props.description}</p>
         <br></br>
         <ul className="text-white text-sm flex gap-2 justify-center">
