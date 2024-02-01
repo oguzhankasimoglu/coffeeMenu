@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 interface MenuCardsProps {
   title: string;
@@ -26,13 +27,15 @@ const MenuCards = (props: MenuCardsProps) => {
           {props.description}
         </p>
         <br></br>
-        <ul className="text-white text-sm flex gap-2 justify-center">
-          {props.ingredients.map((ingredient, index) => (
-            <li className="border bg-red-600 rounded-3xl p-1" key={index}>
-              {ingredient}
-            </li>
-          ))}
-        </ul>
+        <Marquee>
+          <ul className="text-white text-sm flex gap-2 justify-center">
+            {props.ingredients.map((ingredient, index) => (
+              <li className="border bg-red-600 rounded-3xl p-1" key={index}>
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        </Marquee>
       </div>
     </div>
   );
